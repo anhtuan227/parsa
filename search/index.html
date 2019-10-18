@@ -160,29 +160,23 @@
     
 
 
-<section class="section-com">
-  <div class="container-com">
-    <div class="row-com">
-      <div class="col-lg-10-sr">
-	    <div class="topcon-sr">
-          <div class="titleline-sr"><p><a href="#">Search Result</a></p></div>
-		  <div class="topline-sr"></div>
-	    </div>
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
         <div id="search-results">
-		  <script async="" src="//www.google-analytics.com/analytics.js"></script>
-          <script id="search-result-template" type="text/x-js-template">
-            <ul class="search-result list-unstyled" id="summary-${key}">
-              <li class="border-bottom mb-4 pb-3">
-                <h4><a class="text-dark-sr" href="${link}">${title}</a></h4>
-                <p>${snippet}</p>
-                ${ isset tags }<p>Tags: ${tags}</p>${ end }
-                ${ isset categories }<p>Categories: ${categories}</p>${ end }
-              </li>
-            </ul>
-          </script>
-        </div>
-	  </div>
-
+        <script id="search-result-template" type="text/x-js-template">
+          <ul class="search-result list-unstyled" id="summary-${key}">
+            <li class="border-bottom mb-4 pb-3">
+              <h4><a class="text-dark" href="${link}">${title}</a></h4>
+              <p>${snippet}</p>
+              ${ isset tags }<p>Tags: ${tags}</p>${ end }
+              ${ isset categories }<p>Categories: ${categories}</p>${ end }
+            </li>
+          </ul>
+        </script>
+		</div>
+      </div>
     </div>
   </div>
 </section>
