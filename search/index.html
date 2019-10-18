@@ -145,59 +145,7 @@
 		<li><a href="https://anhtuan227.github.io/parsa/about/">About</a></li>
 		<li><a href="https://anhtuan227.github.io/parsa/contact/">Contact</a></li>
 	  </ul>
-<script type='text/javascript'>
 
-(function ($) {
-    "use strict";
-  
-
-    $('.btn-show-menu-mobile').on('click', function(){
-        $(this).toggleClass('is-active');
-        $('.collapse').slideToggle();
-    });
-
-    var arrowMainMenu = $('.arrow-main-menu-m');
-
-    for(var i=0; i<arrowMainMenu.length; i++){
-        $(arrowMainMenu[i]).on('click', function(){
-            $(this).parent().find('.sub-menu-m').slideToggle();
-            $(this).toggleClass('turn-arrow-main-menu-m');
-        })
-    }
-	
-	var arrowSubMenu = $('.arrow-sub-menu-m');
-	for(var j=0; j<arrowSubMenu.length; j++){
-        $(arrowSubMenu[j]).on('click', function(){
-            $(this).parent().find('.sub-sub-menu-m').slideToggle();
-            $(this).toggleClass('turn-arrow-sub-menu-m')
-        })
-    }
-
-    $(window).resize(function(){
-        if($(window).width() >= 983){
-            if($('.collapse').css('display') == 'flex') {
-                $('.collapse').css('display','none');
-                $('.btn-show-menu-mobile').toggleClass('is-active');
-            }
-
-            $('.sub-menu-m').each(function(){
-                if($(this).css('display') == 'block') { console.log('hello');
-                    $(this).css('display','none');
-                    $(arrowMainMenu).removeClass('turn-arrow-main-menu-m');
-                }
-            });
-            
-            $('.sub-sub-menu-m').each(function(){
-                if($(this).css('display') == 'block') { console.log('hello');
-                    $(this).css('display','none');
-                    $(arrowSubMenu).removeClass('turn-arrow-sub-menu-m');
-                }
-            });	
-        }
-    });
-})(jQuery); 
-
-</script> 	  
       
       <!-- search -->
       <form class="form-inline position-relative ml-lg-4" action="https://anhtuan227.github.io/parsa//search">
