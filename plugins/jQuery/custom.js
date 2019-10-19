@@ -9,6 +9,7 @@ jQuery(window).load(function() {
     });
 		}
 });
+	
 
 // NAVIGATION CALLBACK
 var ww = jQuery(window).width();
@@ -58,4 +59,4 @@ jQuery(document).ready(function() {
 			jQuery('.topsocial').toggle();
 		});	
 });
-
+	
