@@ -43,32 +43,157 @@
 </div>
 <!-- preloader end -->
 <header class="navigation">
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="https://anhtuan227.github.io/parsa/"><img class="img-fluid" src="https://anhtuan227.github.io/parsa/images/logo.png" alt="Parsa | Personal Blog Template"></a>
-    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navogation"
-      aria-controls="navogation" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse text-center" id="navogation">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link text-uppercase text-dark" href="https://anhtuan227.github.io/parsa/"> Home </a>
+    <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+		  <span class="hamburger-box">
+		    <span class="hamburger-inner"></span>
+		  </span>
+	</div>
+	<div class="collapse navbar-collapse text-left" id="navogation">
+	  <ul class="level-1">
+        <li class="li-home"><a href="https://anhtuan227.github.io/parsa"><i class="ti-home"></i></a></li>
+        <li><a href="https://anhtuan227.github.io/parsa/about/">About</a></li>
+        <li class="has-sub">
+		  <span class="submenu-button"></span>
+		  <a href="#">Your Products</a>
+          <ul class="level-2">
+            <li class="has-sub">
+			  <span class="submenu-button"></span>
+			  <a href="#">Product 1</a>
+              <ul class="level-3">
+                <li><a href="#">Sub Your Product 1</a></li>
+                <li><a href="#">Product 1-1</a></li>
+              </ul>
+            </li>
+            <li class="has-sub">
+			  <span class="submenu-button"></span>
+			  <a href="#">Product 2</a>
+              <ul class="level-3">
+                <li><a href="#">Sub Your Product 2</a></li>
+                <li><a href="#">Product 2-2</a></li>
+              </ul>
+            </li>
+          </ul>
         </li>
-        
-        
-        <li class="nav-item">
-          <a class="nav-link text-uppercase text-dark" href="https://anhtuan227.github.io/parsa/about">About</a>
+        <li><a href="https://anhtuan227.github.io/parsa/contact/">Contact</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li class="has-sub">
+		  <span class="submenu-button"></span>
+		  <a href="#">Quạt làm mát</a>
+          <ul class="level-2">
+            <li class="has-sub">
+			  <span class="submenu-button"></span>
+			  <a href="#">Quạt điện đứng</a>
+              <ul class="level-3">
+                <li><a href="#">Quạt điện Sanyo</a></li>
+                <li><a href="#">Quạt điện Panasonic</a></li>
+              </ul>
+            </li>
+            <li class="has-sub">
+			  <span class="submenu-button"></span>
+			  <a href="#">Quạt để bàn</a>
+              <ul class="level-3">
+                <li><a href="#">Quạt điện Asia</a></li>
+                <li><a href="#">Quạt điện Toshiba</a></li>
+              </ul>
+            </li>
+          </ul>
         </li>
-        
-        
-        
-        <li class="nav-item">
-          <a class="nav-link text-uppercase text-dark" href="https://anhtuan227.github.io/parsa/contact">Contact</a>
-        </li>
-        
-        
       </ul>
+	  
+	  <ul class="main-menu-m">
+	    <li>
+		  <a href="https://anhtuan227.github.io/parsa">Home</a>
+		  <ul class="sub-menu-m">
+		    <li><a href="#">Homepage 1</a></li>
+			<li><a href="#">Homepage 2</a></li>
+			<li><a href="#">Homepage 3</a></li>
+		  </ul>
+		  <span class="arrow-main-menu-m">
+			<i class="ti-angle-right" aria-hidden="true"></i>
+		  </span>
+		</li>
+		<li><a href="#">Shop</a></li>
+		<li><a href="#" class="label1 rs1" data-label1="hot">Features</a></li>
+		<li>
+		  <a href="#">Blog</a>
+		  <ul class="sub-menu-m">
+			<li><a href="#">Blog Homepage 1</a></li>
+			<li>
+			  <a href="#">Blog Homepage 2</a>
+			  <ul class="sub-sub-menu-m">
+				<li><a href="#">Blog Blog Homepage 1</a></li>
+				<li><a href="#">Blog Blog Homepage 2</a></li>
+				<li><a href="#">Blog Blog Homepage 3</a></li>
+			  </ul>
+			  <span class="arrow-sub-menu-m">
+				<i class="ti-angle-right" aria-hidden="true"></i>
+			  </span>
+			</li>
+			<li><a href="#">Blog Homepage 3</a></li>
+		  </ul>
+		  <span class="arrow-main-menu-m">
+		    <i class="ti-angle-right" aria-hidden="true"></i>
+		  </span>
+		</li>
+		<li><a href="https://anhtuan227.github.io/parsa/about/">About</a></li>
+		<li><a href="https://anhtuan227.github.io/parsa/contact/">Contact</a></li>
+	  </ul>
+<script type='text/javascript'>
+
+(function ($) {
+    "use strict";
+  
+
+    $('.btn-show-menu-mobile').on('click', function(){
+        $(this).toggleClass('is-active');
+        $('.collapse').slideToggle();
+    });
+
+    var arrowMainMenu = $('.arrow-main-menu-m');
+
+    for(var i=0; i<arrowMainMenu.length; i++){
+        $(arrowMainMenu[i]).on('click', function(){
+            $(this).parent().find('.sub-menu-m').slideToggle();
+            $(this).toggleClass('turn-arrow-main-menu-m');
+        })
+    }
+	
+	var arrowSubMenu = $('.arrow-sub-menu-m');
+	for(var j=0; j<arrowSubMenu.length; j++){
+        $(arrowSubMenu[j]).on('click', function(){
+            $(this).parent().find('.sub-sub-menu-m').slideToggle();
+            $(this).toggleClass('turn-arrow-sub-menu-m')
+        })
+    }
+
+    $(window).resize(function(){
+        if($(window).width() >= 983){
+            if($('.collapse').css('display') == 'flex') {
+                $('.collapse').css('display','none');
+                $('.btn-show-menu-mobile').toggleClass('is-active');
+            }
+
+            $('.sub-menu-m').each(function(){
+                if($(this).css('display') == 'block') { console.log('hello');
+                    $(this).css('display','none');
+                    $(arrowMainMenu).removeClass('turn-arrow-main-menu-m');
+                }
+            });
+            
+            $('.sub-sub-menu-m').each(function(){
+                if($(this).css('display') == 'block') { console.log('hello');
+                    $(this).css('display','none');
+                    $(arrowSubMenu).removeClass('turn-arrow-sub-menu-m');
+                }
+            });	
+        }
+    });
+})(jQuery); 
+
+</script> 	  
       
       <!-- search -->
       <form class="form-inline position-relative ml-lg-4" action="https://anhtuan227.github.io/parsa//search">
@@ -77,7 +202,7 @@
       </form>
       
     </div>
-  </nav>
+  </div>
 </header>
 
   
