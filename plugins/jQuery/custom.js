@@ -25,3 +25,29 @@ jQuery(document).ready(function() {
 	});
 	adjustMenu();
 })
+
+// navigation orientation resize callbak
+jQuery(window).bind('resize orientationchange', function() {
+	ww = jQuery(window).width();
+	adjustMenu();
+});
+
+var adjustMenu = function() {
+	if (ww < 981) {
+		jQuery(".toggleMenu").css("display", "block");
+		if (!jQuery(".toggleMenu").hasClass("active")) {
+			jQuery(".sitenav").hide();
+		} else {
+			jQuery(".sitenav").show();
+		}
+		jQuery(".sitenav li").unbind('mouseenter mouseleave');
+	} else {
+		jQuery(".toggleMenu").css("display", "none");
+		jQuery(".sitenav").show();
+		jQuery(".sitenav li").removeClass("hover");
+		jQuery(".sitenav li a").unbind('click');
+		jQuery(".sitenav li").unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function() {
+			jQuery(this).toggleClass('hover');
+		});
+	}
+}
