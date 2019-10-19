@@ -51,3 +51,10 @@ var adjustMenu = function() {
 		});
 	}
 }
+
+jQuery(document).ready(function() {
+  	jQuery('.srchicon').click(function() {
+			jQuery('.searchtop').toggle();
+			jQuery('.topsocial').toggle();
+		});	
+});
